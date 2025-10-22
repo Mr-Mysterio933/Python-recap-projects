@@ -1,16 +1,30 @@
 import random
 #add a function to role 2 dices
-def roll_dice():
-    dice1= random.randint(1,6)
-    dice2 = random.randint(1,6)
-    print(f"({dice1},{dice2})")
+def roll_dice(num_of_dice):
+    dices = []
+    for i in range(num_of_dice):
+        dice = random.randint(1,6)
+        dices.append(dice)
+    iteration = 0
+    for j in dices:
+        if iteration == 0:
+            print("("+str(j),end=", ")
+        elif iteration == num_of_dice - 1:
+            print(str(j)+")")
+        else:
+            print(str(j),end=", ")
+        
+        iteration +=1
+        
+    
 #run a loop
 while True:
     #ask "Do u wanna role a dice?"
     choice = input("Do u wanna role a dice?(y/n)")
     #if yes call the funtion 
     if choice.lower() == "y":
-        roll_dice()
+        num_of_dice = int(input("Enter the number of dices u wanna role: "))
+        roll_dice(num_of_dice)
     #if no then break
     elif choice.lower() == "n":
         break
