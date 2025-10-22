@@ -18,6 +18,7 @@ def roll_dice(num_of_dice):
         
     
 #run a loop
+times = 0
 while True:
     #ask "Do u wanna role a dice?"
     choice = input("Do u wanna role a dice?(y/n)")
@@ -25,10 +26,12 @@ while True:
     if choice.lower() == "y":
         num_of_dice = int(input("Enter the number of dices u wanna role: "))
         roll_dice(num_of_dice)
+        times +=1
     #if no then break
     elif choice.lower() == "n":
         break
     else:
         print("Invalid input!")
 
+print(f"You rolled {times} times")
 print("Thanks for playing!")
